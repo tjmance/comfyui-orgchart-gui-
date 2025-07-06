@@ -1,0 +1,8 @@
+{
+  "nodes": {
+    "1": { "name": "LoadImage", "outputs": ["2"] },
+    "2": { "name": "TextPrompt", "outputs": ["3"] },
+    "3": { "name": "Sampler", "outputs": ["4"] },
+    "4": { "name": "SaveImage", "outputs": [] }
+  }
+}
