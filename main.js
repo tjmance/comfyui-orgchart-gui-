@@ -69,3 +69,17 @@ function loadExample() {
     .then(res => res.json())
     .then(data => parseWorkflow(data));
 }
+function loadLiveWorkflow() {
+  fetch("http://127.0.0.1:8188/get_prompt")
+    .then(res => {
+      if (!res.ok) throw new Error("ComfyUI unreachable");
+      return res.json();
+    })
+    .then(data => {
+      parseWorkflow(data);
+    })
+    .catch(err => {
+      alert("Failed to load from ComfyUI. Is it running on localhost:8188?");
+      console.error(err);
+    });
+}
